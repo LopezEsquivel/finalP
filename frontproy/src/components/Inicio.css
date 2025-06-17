@@ -1,0 +1,90 @@
+/* Eliminar márgenes, scroll y ajustar todo al 100% */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor principal (imagen de fondo) */
+.fondo {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/democracia-og.webp');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Barra de navegación superior */
+.barra-navegacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  background-color: #007c99;
+  width: 100%;
+}
+
+.boton-nav {
+  background-color: #00cfe8;
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.boton-nav:hover {
+  transform: scale(1.05);
+}
+
+/* Texto sobre la imagen */
+.contenido {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+
+.contenido h1 {
+  color: white;
+  font-size: 2.5rem;
+  text-align: right;
+  text-shadow: 2px 2px 5px black;
+}
+
+/* Footer fijo */
+.redes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: #1e3a56;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.redes a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.redes a:hover {
+  transform: scale(1.2);
+}

@@ -1,0 +1,235 @@
+/* Contenedor principal */
+.postulantes-contenedor {
+  background-color: #eaf6f5;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título principal */
+.titulo {
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: #004d40;
+  margin-bottom: 2rem;
+}
+
+/* Grid centrado */
+.papeleta-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* Casilla individual */
+.casilla-papeleta {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 1.5rem 1rem;
+  width: 220px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.casilla-papeleta:hover {
+  transform: scale(1.03);
+}
+
+.casilla-papeleta img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.nombre {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #00114d;
+  margin-bottom: 0.3rem;
+}
+
+.partido {
+  font-size: 1rem;
+  color: #180079;
+  font-weight: bold;
+}
+
+/* Fondo del modal */
+.modal-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Panel modal */
+.modal-panel {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 95%;
+  max-width: 750px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+/* Botón cerrar (X) en esquina */
+.modal-panel::before {
+  content: "×";
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  color: #d32f2f;
+  cursor: pointer;
+}
+
+.modal-panel::before:hover {
+  color: #b71c1c;
+}
+
+/* Imagen en modal */
+.imagen-modal {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+}
+
+/* Texto dentro del modal */
+.modal-panel h3 {
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
+  color: #003c3c;
+}
+
+.partido-nombre {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: hsl(223, 97%, 23%);
+  margin-bottom: 1.5rem;
+}
+
+.bio,
+.propuestas {
+  text-align: justify;
+  background-color: #f2fdfa;
+  padding: 1.2rem;
+  border-radius: 12px;
+  color: #333;
+  margin: 1rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Navegación */
+.controles-navegacion {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.controles-navegacion button {
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  background-color: #000e79;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.controles-navegacion button:hover {
+  background-color: #000b5f;
+}
+
+.cerrar {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cerrar:hover {
+  background-color: #b71c1c;
+}
+
+.secciones-botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  margin: 1rem 0;
+}
+
+.secciones-botones button {
+  background-color: #051d42;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.secciones-botones button:hover {
+  background-color: #001369;
+}
+
+.seccion-texto {
+  background-color: #f1fefc;
+  padding: 1.2rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+  text-align: justify;
+  line-height: 1.6;
+  color: #333;
+}
+.postulantes-scroll-wrapper {
+  overflow-y: auto;
+  max-height: 90vh;
+  width: 100%;
+  padding-right: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #999 transparent;
+}
+
+/* Estilo del scrollbar para navegadores*/
+.postulantes-scroll-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.postulantes-scroll-wrapper::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 6px;
+}
+
+.postulantes-scroll-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}

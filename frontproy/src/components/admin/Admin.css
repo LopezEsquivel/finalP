@@ -1,0 +1,144 @@
+.admin-box {
+  background: #004f5a;
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+.formulario {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.formulario input, .formulario button {
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+}
+
+.formulario button {
+  background: #007777;
+  color: white;
+  cursor: pointer;
+}
+
+.lista {
+  list-style: none;
+  padding-left: 0;
+}
+
+.lista li {
+  padding: 0.5rem;
+  background: #006e7d;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+}
+
+.botones button {
+  margin-right: 0.5rem;
+  padding: 5px 10px;
+  background: #009999;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.tarjeta-politico {
+  background-color: #ffffff;
+  border: 2px solid #0097a7;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: #333;
+  font-family: sans-serif;
+}
+
+.tarjeta-politico h4 {
+  margin: 0 0 10px;
+}
+
+.tarjeta-politico .info {
+  margin-bottom: 6px;
+}
+
+.tarjeta-politico .acciones button {
+  margin-right: 8px;
+  background-color: #0097a7;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tarjeta-politico .acciones button:hover {
+  background-color: #006e80;
+}
+.filtros {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filtros input,
+.filtros select {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.paginacion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.paginacion button {
+  background-color: #007777;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.paginacion button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.admin-scroll {
+  max-height: 100vh; /* Altura máxima del viewport */
+  overflow-y: auto;  /* Habilita el scroll vertical */
+  padding-bottom: 2rem; /* Espacio para ver el final del contenido */
+}
+
+/* Estética opcional para la barra de desplazamiento */
+.admin-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.admin-scroll::-webkit-scrollbar-track {
+  background: #111;
+}
+
+.admin-scroll::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+.admin-scroll::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}

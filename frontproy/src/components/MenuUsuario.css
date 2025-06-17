@@ -1,0 +1,257 @@
+/* Asegura que toda la pantalla esté ocupada */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.usuario-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #121212;
+  color: white;
+  overflow: hidden;
+}
+
+.barra-superior {
+  background-color: #1565c0;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.titulo-header {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.iconos-header {
+  display: flex;
+  gap: 15px;
+}
+
+.icono-nav {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.dropdown-usuario {
+  position: relative;
+}
+
+.menu-desplegable {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: #1e1e1e;
+  border: 1px solid #444;
+  padding: 10px;
+  width: 220px;
+  border-radius: 10px;
+  z-index: 100;
+}
+
+.btn-editar, .btn-cerrar {
+  margin-top: 10px;
+  padding: 7px 10px;
+  width: 100%;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-editar {
+  background-color: #1565c0;
+  color: white;
+}
+
+.btn-cerrar {
+  background-color: #b71c1c;
+  color: white;
+}
+
+/* Layout principal */
+.usuario-layout {
+  display: flex;
+  flex: 1;
+  height: 100%;
+}
+
+/* Menú lateral */
+.sidebar {
+  width: 280px;
+  background-color: #121212;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-right: 1px solid #222;
+}
+
+.btn-menu {
+  padding: 12px;
+  font-size: 18px;
+  background-color: #1e1e1e;
+  border: 2px solid #444;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-menu:hover {
+  background-color: #333;
+}
+
+/* Área principal */
+.usuario-main {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #121212;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Tarjeta perfil */
+.tarjeta-perfil {
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border: 1px solid #444;
+}
+
+.icono-foto {
+  font-size: 60px;
+  color: #bbb;
+  margin-bottom: 10px;
+}
+
+.nombre-usuario {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.estado-usuario {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.barra-progreso {
+  height: 10px;
+  background-color: #333;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.progreso {
+  height: 100%;
+  background-color: #1565c0;
+}
+
+.texto-progreso {
+  font-size: 13px;
+  color: #999;
+}
+
+.custom-upload {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1565c0;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Publicaciones */
+.seccion-publicaciones {
+  margin-top: 40px;
+  max-width: 700px;
+  width: 100%;
+}
+
+.seccion-publicaciones textarea {
+  width: 100%;
+  background-color: #1e1e1e;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 12px;
+  color: white;
+  resize: none;
+  height: 80px;
+  font-size: 14px;
+}
+
+.btn-publicar {
+  margin-top: 10px;
+  background-color: #1565c0;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.mensaje-exito {
+  background-color: #1b5e20;
+  color: #d4ffd4;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+  border: 1px solid #2e7d32;
+}
+
+.publicacion {
+  margin-top: 20px;
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.foto-usuario {
+  font-size: 30px;
+  color: #888;
+}
+
+.publicacion-contenido {
+  flex: 1;
+}
+
+.acciones {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.btn-accion {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 13px;
+  text-decoration: underline;
+}
