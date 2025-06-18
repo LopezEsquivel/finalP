@@ -1,6 +1,8 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import PostulantesViewSet
+from .views import PresidenteViewSet
+
 
 from .views import (
     CrearUsuarioView,
@@ -17,6 +19,8 @@ from .views import (
 router = DefaultRouter()
 router.register(r'partidos', PartidosViewSet, basename='partidos')
 router.register(r'postulantes', PostulantesViewSet, basename='postulantes')  # ✅ esta línea aquí
+router.register(r'presidentes', PresidenteViewSet, basename='presidentes')
+
 
 urlpatterns = [
     path("crear_usuario/", CrearUsuarioView.as_view()),
@@ -28,4 +32,9 @@ urlpatterns = [
     path("comentarios/", ComentariosView.as_view()),
     path("opiniones/", OpinionesView.as_view()),
     path("", include(router.urls)),  # ✅ debe ir al final
+    
 ]
+
+
+
+

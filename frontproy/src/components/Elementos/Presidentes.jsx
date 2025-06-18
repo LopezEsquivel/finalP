@@ -12,7 +12,9 @@ export default function Presidentes() {
   useEffect(() => {
     fetch('http://127.0.0.1:8000/api/presidentes/')
       .then(res => res.json())
-      .then(data => setPresidentes(data))
+      .then(data => {
+        setPresidentes(data);
+      })
       .catch(error => console.error('Error cargando presidentes:', error));
   }, []);
 
@@ -20,12 +22,16 @@ export default function Presidentes() {
 
   const abrirSeccion = (index) => {
     setIndiceSeccion(index);
-    setSeccionActiva(seleccionado?.secciones[index]);
+    setSeccionActiva(seleccionado?.secciones?.[index] || null);
   };
 
   const cambiarSeccion = (dir) => {
     const nuevoIndice = indiceSeccion + dir;
-    if (nuevoIndice >= 0 && nuevoIndice < seleccionado.secciones.length) {
+    if (
+      seleccionado?.secciones &&
+      nuevoIndice >= 0 &&
+      nuevoIndice < seleccionado.secciones.length
+    ) {
       setIndiceSeccion(nuevoIndice);
       setSeccionActiva(seleccionado.secciones[nuevoIndice]);
     }
@@ -48,7 +54,11 @@ export default function Presidentes() {
             className="presidente-card"
             onClick={() => setSeleccionado(presidente)}
           >
-            <img src={presidente.img} alt={presidente.nombre} className="imagen" />
+            {presidente.img ? (
+              <img src={presidente.img} alt={presidente.nombre} className="imagen" />
+            ) : (
+              <div className="imagen-placeholder">Sin imagen</div>
+            )}
             <p className="nombre">{presidente.nombre}</p>
           </div>
         ))}
@@ -60,9 +70,13 @@ export default function Presidentes() {
             <h2>{seleccionado.nombre}</h2>
             <p className="intro">{seleccionado.descripcion}</p>
             <div className="botones-info">
-              {seleccionado.secciones.map((sec, idx) => (
-                <button key={idx} onClick={() => abrirSeccion(idx)}>{sec.titulo}</button>
-              ))}
+              {Array.isArray(seleccionado.secciones) && seleccionado.secciones.length > 0 ? (
+                seleccionado.secciones.map((sec, idx) => (
+                  <button key={idx} onClick={() => abrirSeccion(idx)}>{sec.titulo}</button>
+                ))
+              ) : (
+                <p>Este presidente aún no tiene secciones registradas.</p>
+              )}
             </div>
           </div>
         </div>
@@ -73,13 +87,25 @@ export default function Presidentes() {
           <div className="info-pres" onClick={(e) => e.stopPropagation()}>
             <h2>{seccionActiva.titulo}</h2>
             <ul className="lista-info">
-              {seccionActiva.contenido.map((punto, i) => (
-                <li key={i}>{punto.texto}</li>
-              ))}
+              {Array.isArray(seccionActiva.contenido) && seccionActiva.contenido.length > 0 ? (
+                seccionActiva.contenido.map((punto, i) => (
+                  <li key={i}>{punto.texto}</li>
+                ))
+              ) : (
+                <li>Sin contenido registrado para esta sección.</li>
+              )}
             </ul>
             <div className="nav-secciones">
               <button onClick={() => cambiarSeccion(-1)} disabled={indiceSeccion === 0}>⏪</button>
-              <button onClick={() => cambiarSeccion(1)} disabled={indiceSeccion === seleccionado.secciones.length - 1}>⏩</button>
+              <button
+                onClick={() => cambiarSeccion(1)}
+                disabled={
+                  !seleccionado?.secciones ||
+                  indiceSeccion === seleccionado.secciones.length - 1
+                }
+              >
+                ⏩
+              </button>
             </div>
           </div>
         </div>

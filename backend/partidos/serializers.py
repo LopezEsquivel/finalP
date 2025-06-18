@@ -8,7 +8,7 @@ from.models import Debates
 from.models import Comentarios
 from.models import Postulantes
 from.models import Opiniones
-
+from .models import Presidente
 from django.contrib.auth.models import User
 
 
@@ -89,8 +89,15 @@ class UserSerializer(ModelSerializer):
         user.set_password(password)
         user.save()
         return user 
-   
 
+class PresidenteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Presidente
+        fields = [
+            'id', 'nombre', 'descripcion', 'img',
+            'que_hizo_en_su_partido', 'bibliografia',
+            'criticas', 'logros', 'despues_de_la_presidencia'
+        ]
 
 
    

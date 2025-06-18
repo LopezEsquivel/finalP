@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 class PerfilUsuario(models.Model):
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -64,21 +65,24 @@ class Opiniones(models.Model):
 class Presidente(models.Model):
     nombre = models.CharField(max_length=100)
     descripcion = models.TextField()
-    img = models.URLField() 
+    img = CloudinaryField('image', folder='Presidentes')
+
+    def __str__(self):
+        return self.nombre
+    
+class Presidente(models.Model):
+    nombre = models.CharField(max_length=100)
+    descripcion = models.TextField()
+    img = CloudinaryField('image', folder='Presidentes')
+    que_hizo_en_su_partido = models.TextField(blank=True, null=True)
+    bibliografia = models.TextField(blank=True, null=True)
+    criticas = models.TextField(blank=True, null=True)
+    logros = models.TextField(blank=True, null=True)
+    despues_de_la_presidencia = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.nombre
 
-class SeccionPresidente(models.Model):
-    presidente = models.ForeignKey(Presidente, related_name='secciones', on_delete=models.CASCADE)
-    titulo = models.CharField(max_length=255)
 
-    def __str__(self):
-        return f"{self.presidente.nombre} - {self.titulo}"
 
-class ContenidoSeccion(models.Model):
-    seccion = models.ForeignKey(SeccionPresidente, related_name='contenido', on_delete=models.CASCADE)
-    texto = models.TextField()
 
-    def __str__(self):
-        return f"Contenido de: {self.seccion.titulo}"

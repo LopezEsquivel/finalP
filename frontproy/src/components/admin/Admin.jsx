@@ -6,6 +6,7 @@ import AdminCampanas from "./AdminCampanas";
 import AdminUsuarios from "./AdminUsuarios";
 import AdminPoliticos from './AdminPoliticos';
 import AdminPostulantes from './AdminPostulantes';
+import AdminPresidentes from './AdminPresidentes';
 
 
 const Admin = () => {
@@ -24,6 +25,7 @@ const Admin = () => {
         <option value="foro">Foro</option>
         <option value="politicos">Políticos</option>
         <option value="postulantes">Postulantes</option>
+        <option value="presidentes">Presidentes</option>
 
 
       </select>
@@ -36,6 +38,7 @@ const Admin = () => {
         {seccion === 'foro' && <AdminForo />}
         {seccion === 'politicos' && <AdminPoliticos />}
         {seccion === 'postulantes' && <AdminPostulantes />}
+        {seccion === 'presidentes' && <AdminPresidentes />}
 
 
       </div>

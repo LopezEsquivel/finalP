@@ -25,6 +25,8 @@ from .models import Opiniones
 from .serializers import OpinionesSerializer
 from rest_framework.generics import ListCreateAPIView
 from rest_framework.viewsets import ModelViewSet
+from .models import Presidente
+from .serializers import PresidenteSerializer
 
 class CrearUsuarioView(ListCreateAPIView):
      queryset= User.objects.all()
@@ -74,3 +76,8 @@ class OpinionesView(ListCreateAPIView):
 class PostulantesViewSet(ModelViewSet):
     queryset = Postulantes.objects.all()
     serializer_class = PostulantesSerializer
+
+
+class PresidenteViewSet(viewsets.ModelViewSet):
+    queryset = Presidente.objects.all()
+    serializer_class = PresidenteSerializer

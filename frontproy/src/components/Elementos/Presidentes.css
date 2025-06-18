@@ -1,82 +1,127 @@
-.postulantes-contenedor {
-  text-align: center;
-  padding: 20px;
-  background: #e7f5f7;
+.presidentes-container {
+  padding: 2rem;
+  background: #121212;
+  color: #fff;
   min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  overflow-y: auto;
 }
 
-.papeleta-grid {
+.titulo {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #f1c40f;
+}
+
+.galeria-president {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 1rem;
   justify-content: center;
+  padding-bottom: 4rem;
 }
 
-.casilla-papeleta {
-  background: white;
-  padding: 10px;
-  width: 180px;
-  border-radius: 12px;
-  box-shadow: 0px 0px 5px #aaa;
+.presidente-card {
+  background: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
   cursor: pointer;
-  transition: transform 0.2s ease;
-}
-.casilla-papeleta:hover {
-  transform: scale(1.05);
+  width: 160px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #444;
 }
 
-.casilla-papeleta img {
+.presidente-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #f1c40f;
+}
+
+.imagen {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 10px;
 }
 
-.partido {
-  font-size: 0.9rem;
-  color: #444;
+.nombre {
+  padding: 0.5rem;
   font-weight: bold;
+  color: #f1c40f;
 }
 
-.modal-fondo {
+.overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+  overflow-y: auto;
 }
 
-.modal-papeleta {
-  background: white;
-  padding: 30px;
-  border-radius: 14px;
-  max-width: 500px;
-  text-align: center;
+.info-pres {
+  background: #222;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  color: #fff;
+  text-align: left;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
   position: relative;
 }
 
-.modal-papeleta img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 15px;
+.intro {
+  margin-bottom: 1rem;
 }
 
-.controles-navegacion {
+.botones-info button {
+  margin: 0.25rem;
+  padding: 0.5rem 1rem;
+  background: #f1c40f;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.lista-info {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+.lista-info li {
+  margin-bottom: 0.5rem;
+}
+
+.nav-secciones {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 1.5rem;
 }
 
-.cerrar {
-  margin-top: 15px;
-  padding: 8px 14px;
+.nav-secciones button {
+  background: #f1c40f;
   border: none;
-  background: #d32f2f;
-  color: white;
-  border-radius: 6px;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
   cursor: pointer;
 }
+
+.boton-volver {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background: #f1c40f;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
