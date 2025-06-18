@@ -44,9 +44,9 @@ class Postulantes(models.Model):
     partido = models.ForeignKey(Partidos, on_delete=models.CASCADE)
     biografia = models.TextField(blank=True)
     propuestas = models.TextField(blank=True)
-    criticas = models.TextField(blank=True)  # 👈 nuevo campo
-    logros = models.TextField(blank=True)    # 👈 nuevo campo
-    historia = models.TextField(blank=True)  # 👈 nuevo campo
+    criticas = models.TextField(blank=True)  
+    logros = models.TextField(blank=True)    
+    historia = models.TextField(blank=True)  
     imagen = models.URLField(blank=True)
 
 
@@ -60,3 +60,25 @@ class Opiniones(models.Model):
     contenido = models.TextField()
     fecha_critica = models.DateTimeField(auto_now_add=True)
                 #guarda fecha y hora     #pone automáticamente la fecha y hora
+
+class Presidente(models.Model):
+    nombre = models.CharField(max_length=100)
+    descripcion = models.TextField()
+    img = models.URLField() 
+
+    def __str__(self):
+        return self.nombre
+
+class SeccionPresidente(models.Model):
+    presidente = models.ForeignKey(Presidente, related_name='secciones', on_delete=models.CASCADE)
+    titulo = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.presidente.nombre} - {self.titulo}"
+
+class ContenidoSeccion(models.Model):
+    seccion = models.ForeignKey(SeccionPresidente, related_name='contenido', on_delete=models.CASCADE)
+    texto = models.TextField()
+
+    def __str__(self):
+        return f"Contenido de: {self.seccion.titulo}"
