@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import llamados from '../../servicios/llamados'; // ruta corregida
+import llamados from '../../servicios/llamados'; 
 import './Admin.css';
 
 const AdminPartidos = () => {

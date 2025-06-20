@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Admin.css";
+import "./AdminPresidentes.css";
 
 const AdminPostulantes = () => {
   const [nombre, setNombre] = useState("");

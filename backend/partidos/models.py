@@ -60,20 +60,12 @@ class Opiniones(models.Model):
     politico = models.ForeignKey(Politicos, on_delete=models.CASCADE)
     contenido = models.TextField()
     fecha_critica = models.DateTimeField(auto_now_add=True)
-                #guarda fecha y hora     #pone automáticamente la fecha y hora
+                
 
 class Presidente(models.Model):
     nombre = models.CharField(max_length=100)
     descripcion = models.TextField()
-    img = CloudinaryField('image', folder='Presidentes')
-
-    def __str__(self):
-        return self.nombre
-    
-class Presidente(models.Model):
-    nombre = models.CharField(max_length=100)
-    descripcion = models.TextField()
-    img = CloudinaryField('image', folder='Presidentes')
+    img = models.URLField(blank=True)  # CAMPO CORRECTO
     que_hizo_en_su_partido = models.TextField(blank=True, null=True)
     bibliografia = models.TextField(blank=True, null=True)
     criticas = models.TextField(blank=True, null=True)
@@ -82,7 +74,5 @@ class Presidente(models.Model):
 
     def __str__(self):
         return self.nombre
-
-
 
 
